@@ -1,0 +1,1 @@
+# menu-for-all-applications
