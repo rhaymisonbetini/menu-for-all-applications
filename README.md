@@ -3,6 +3,8 @@
 This library aims to create a dropdown menu with redirection to multiple applications <br/> 
 that the user can access. Application provisioning, authentication and all data is provided by your api<br/> 
 
+![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/Screen-Recording-_23-02-2023-09-18-06_.gif)
+
 ## Installation
 
 run the command
@@ -39,4 +41,5 @@ You must pass 3 parameters in the constructor:
 ```
 
 Once done, an icon will be created at the bottom of the page where, when clicked, <br/>
-the drop-down menu with the data returned from your api will be shown. If an error occurs, an offline display will be given
+the drop-down menu with the data returned from your api will be shown. If an error occurs, an offline display will be given <br/>
+![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/error.jpg)
