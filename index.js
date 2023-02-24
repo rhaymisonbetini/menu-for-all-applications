@@ -6,6 +6,13 @@ let applications = []
 
 class MenuForAllApplications {
 
+    /**
+     * Contructor method need to receive a token do api application, mail o user app acess e application uri (post) 
+     * @param {string} token 
+     * @param {string} userMail 
+     * @param {string} applicationUrl 
+     * @returns {void}
+     */
     constructor(token = null, userMail = null, applicationUrl = null) {
         this.token = token
         this.userMail = userMail
@@ -15,6 +22,10 @@ class MenuForAllApplications {
         this.state = false;
     }
 
+    /**
+     * This method init the manu application with return of the api passsed in applicationUrl
+     * @returns {void}
+     */
     async initMenu() {
         if (this.token || this.userMail || this.applicationUrl) {
             this.createMainMenu(false)
@@ -31,6 +42,11 @@ class MenuForAllApplications {
         this.createMainMenu(menuAndConfig.data)
     }
 
+    /**
+    * This method create main menu ( the circle buttom in the bottom of the page)
+    * @param {Object} data 
+    * @returns {void}
+    */
     createMainMenu(data) {
         var div = document.createElement('div');
         div.id = "divID"
@@ -46,11 +62,15 @@ class MenuForAllApplications {
             div.addEventListener("click", (_) => {
                 this.openApplicationMenu()
             })
-        }else{
+        } else {
             imgIcon.src = this.icons.error
         }
     }
 
+    /**
+     * This method is called when the user clicked on the circle and create a menu in the top of the browsers
+     * @returns {void}
+     */
     openApplicationMenu() {
         !this.state ? this.state = true : this.state = false
         if (this.state) {
@@ -68,9 +88,12 @@ class MenuForAllApplications {
         }
     }
 
+    /**
+    * This method execute a loop in the applications array and create a link with the application in the menu on the top
+    * @returns {void}
+    */
     mount() {
         for (const app of applications) {
-            console.log(app)
             let body = document.getElementById("masterMenu");
             let link = document.createElement('a');
             link.style = `font-size: 24px; padding: 10px;font-weight: bold; text-decoration: none; color: #fff`
@@ -87,6 +110,10 @@ class MenuForAllApplications {
         this.show()
     }
 
+    /**
+   * This method just execute a fadde in effect 
+   * @returns {void}
+   */
     show() {
         var body = document.getElementById("masterMenu");
         for (var i = 0; i < 1; i += 0.00001) {
