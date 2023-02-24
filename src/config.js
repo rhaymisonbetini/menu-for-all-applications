@@ -1,6 +1,11 @@
 'use strict'
 
 class Config {
+
+    /**
+     * This method return a icons to display in the menu circle
+     * @returns {Object}
+     */
     getIcons() {
         return {
             menurounded: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAACgElEQVR4nO3c227SABzH8ZYNWFtfwPlcJhSYojDEAdMB3a3P4SVsbA7Y1DHnYZ51HOY4XHjlWxh2/zelTfTKSGvSLXw/ye8Ffi2l0F+qKAAAAAAAAAAAAMB8K/6IKpVxUdkc9VRrdKFaI1GtoagVOwMn5fNpQuVvEirZOXOy0XfTk9DDrixM05GFB3ZOnax/dfNFFot2PjspfJLFwkcn+Q/ThPPvJbxm552T+2/dnEg4dyKR3BuJ5F5L5J6dV06yL90cS2T1WKKrL5xkjty0JZo+dPNclu7aeebkzlM3B7KUsrMvWqol2m07TSe3Gm72RFvZE33lyYW+stvVkrsF5WYj4q/8jdENxRqPlc2xqJYdytf+Xr6T5O40WqI+1GI7y97PfMoXr+XryR3RE3XR4vWBt0/C5nidM//AV/nTxLfFiG/nZz8A1rjPZWf/f5Qvhlnrzty/WhlNuOa3/Jcf3xLdrE08HIDhhLudlu/yDXNL9Fj15+wHwBr2uNVs+i7fMGtixGqdmQ+AUh4UuM9v+i/frMk1s7o2+wF49D2iVgZDfmQ1fJVvxGrnSvZxWPHEGiyr5fMhv3D3PJevJ7aueyv/j09CqHSWD5XOOqFSfzKnfy/IP3/hmtWJblZPp5cdz2c+AAAAAAAA5hO7IGEXlL+a/5qyC8oG/5c1u6DVS/G8gF1QNMiHNeyCjgJ9UsYuKBPwY0p2Qe3AymcXlAm4fHZBh4GWzy4oHWz57ILS7IIAAAAAAABwVbALEnZBeXZBvKwpxS5Irsoijl1Q9lKVzy4oyi5ozl9fEON9QcIuaA7PfINdUDvw8tkFpdkFzdVlR+d9QQAAAAAAAAAAAIDy2y9uE82QwEj4WgAAAABJRU5ErkJggg==",
