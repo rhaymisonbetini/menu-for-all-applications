@@ -30,9 +30,9 @@ This id is very important because the menu will hang on it
 Now in your code run the library
 You must pass 3 parameters in the constructor:
 
-*** auth token ( sanctum, jwt, etc..) of the api that will provide the applications that the user has access to.
-*** User email so that the search can be done in the destination api
-*** Endpoint of your api ( POST )
+* auth token ( sanctum, jwt, etc..) of the api that will provide the applications that the user has access to. <br/>
+* User email so that the search can be done in the destination api<br/>
+* Endpoint of your api ( POST )<br/>
 
 ```javascript
  const menuForAll = new MenuForAllApplications(token, userMail, apiUrl);
