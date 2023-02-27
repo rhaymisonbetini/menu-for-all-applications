@@ -24,6 +24,7 @@ class MenuForAllApplications {
         this.state = false;
         this.screenWidth = window.innerWidth;
         this.screenHeight = window.innerHeight;
+        this.hasRezised = false;
     }
 
     /**
@@ -109,12 +110,50 @@ class MenuForAllApplications {
         for (const app of applications) {
             let body = document.getElementById("masterMenu");
             if (app.title !== 'Close Menu') {
-                this.createLink(body,app)
+                this.createLink(body, app)
             } else {
-                this.createParagraph(body,app)
+                this.createParagraph(body, app)
             }
         }
         this.show()
+        window.addEventListener("resize", (_) => {
+            setTimeout(() => {
+                this.screenSizeListener()
+            }, 1000)
+        });
+    }
+
+
+    /**
+    * This method observer screenSize do create responsive menu
+    * @returns void
+    */
+    screenSizeListener() {
+        var menu = document.getElementById('masterMenu');
+        if (!menu) {
+            return
+        }
+        if (window.innerWidth <= this.generalConfig.limitWidth) {
+            menu.style = this.css.menuMobile
+            let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
+            if (hasClosed == -1 && !this.hasRezised) {
+                applications.push({
+                    title: 'Close Menu',
+                    link: null
+                })
+                this.createParagraph(menu, { title: "Close Menu" })
+                this.hasRezised = true
+            }
+        } else {
+            let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
+            if (hasClosed && hasClosed !== -1 && this.hasRezised) {
+                applications.splice(hasClosed, 1)
+                var menu = document.getElementById('masterMenu');
+                menu.style = this.css.menuNormal
+                this.destroiById("closeMenu")
+                this.hasRezised = false
+            }
+        }
     }
 
     /**
@@ -123,7 +162,7 @@ class MenuForAllApplications {
     * @param Object app 
     * @returns void
     */
-    createLink(body,app) {
+    createLink(body, app) {
         let link = document.createElement('a');
         link.style = this.css.linkMenuDefault
         link.innerText = app.title
@@ -143,10 +182,11 @@ class MenuForAllApplications {
     * @param Object app 
     * @returns void
     */
-    createParagraph(body,app) {
+    createParagraph(body, app) {
         let paragraph = document.createElement('p');
         paragraph.style = this.css.linkMenuDefault
         paragraph.innerText = app.title
+        paragraph.id = 'closeMenu'
         body.appendChild(paragraph);
         paragraph.addEventListener("mouseover", (_) => {
             paragraph.style = this.css.mouseHoverLink
@@ -180,10 +220,21 @@ class MenuForAllApplications {
         if (node && node.parentNode) {
             node.parentNode.removeChild(node);
             let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
-            if(hasClosed && hasClosed !== -1) {
+            if (hasClosed && hasClosed !== -1) {
                 applications.splice(hasClosed, 1)
             }
             this.state = false;
+        }
+    }
+
+    /**
+    * This method destroy htmelemt by id
+    * @returns void
+    */
+    destroiById(id) {
+        var node = document.getElementById(id);
+        if (node && node.parentNode) {
+            node.parentNode.removeChild(node);
         }
     }
 }
