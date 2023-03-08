@@ -64,6 +64,30 @@ This object must have the following format
 
 ```
 
+## CDN file ou import script tag
+
+If you don't want to use npm to install the package and call it directly in your html.<br/>
+Download the js file to your preferred directory.The file is located in <br/>
+
+```
+    .src/cdn/cdnmenu.js
+```
+
+In you HTML add <br/>
+
+
+* auth token ( sanctum, jwt, etc..) of the api that will provide the applications that the user has access to. <br/>
+* User email so that the search can be done in the destination api<br/>
+* Endpoint of your api ( POST )<br/>
+
+```html
+  <script src="./cdnmenu.js" type="text/javascript"></script>    
+  <script>
+        initMenu(token, email, endpointApplication)
+  </script>
+```
+
+
 Once done, an icon will be created at the bottom of the page where, when clicked, <br/>
 the drop-down menu with the data returned from your api will be shown. If an error occurs, an offline display will be given <br/>
 ![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/error.jpg)
