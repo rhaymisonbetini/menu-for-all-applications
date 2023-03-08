@@ -1,4 +1,4 @@
-# MENU FOR ALL APPLICATIONS (VUE-QUASAR-LARAVEL-NOVA)
+# MENU FOR ALL APPLICATIONS 
 
 This library aims to create a dropdown menu with redirection to multiple applications <br/> 
 that the user can access. Application provisioning, authentication and all data is provided by your api<br/> 
