@@ -88,6 +88,8 @@ In you HTML add <br/>
 ```
 
 
+## ERROR
+
 Once done, an icon will be created at the bottom of the page where, when clicked, <br/>
 the drop-down menu with the data returned from your api will be shown. If an error occurs, an offline display will be given <br/>
 ![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/error.jpg)
