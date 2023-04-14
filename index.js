@@ -27,20 +27,47 @@ class MenuForAllApplications {
         this.hasRezised = false;
         this.personalCss = null;
         this.personalCssMenuMobile = null;
-        this.personalMouseHover =null;
+        this.personalMouseHover = null;
     }
 
-
+    /**
+     * this method modify default menu style
+     * @param {string} color;
+     * @param {number} positionTop 
+     * @param {string} aling 
+     * @return {void}
+     */
     async setMenuStyle(color, positionTop, aling) {
         this.personalCss = this.internalConfig.setMenuNormalStyle(positionTop, color, aling)
     }
 
-    async setMouseOnHover(color){
+    /**
+     * this method change hover in link menu
+     * @param {string} color 
+     */
+    async setMouseOnHover(color) {
         this.personalMouseHover = this.internalConfig.setMouseOnHover(color)
     }
 
-    async setMobileMenu(color, positionTop){
+    /**
+     * This method change menu mobile
+     * @param {string} color : ;
+     * @param {number} positionTop 
+     */
+    async setMobileMenu(color, positionTop) {
         this.personalCssMenuMobile = this.internalConfig.setMenuMobile(positionTop, color)
+    }
+
+    /**
+     * this method create a standalone menu, whitout api calls
+     * @param {Array<Object>} data 
+     */
+    async standAlone(data) {
+        if(!data && data.length <= 0 ) {
+            imgIcon.src = this.icons.error
+            return;
+        }
+        this.createMainMenu(data)
     }
 
     /**
@@ -49,7 +76,7 @@ class MenuForAllApplications {
      */
     async initMenu() {
         if (!this.token || !this.userMail || !this.applicationUrl) {
-            this.createMainMenu(false)
+            imgIcon.src = this.icons.error
             return;
         }
 
@@ -108,7 +135,7 @@ class MenuForAllApplications {
                     link: null
                 })
             } else {
-                menu.style = this.personalCss ??this.css.menuNormal
+                menu.style = this.personalCss ?? this.css.menuNormal
             }
             document.getElementById("q-app").appendChild(menu);
             this.mount()
@@ -150,7 +177,7 @@ class MenuForAllApplications {
             return
         }
         if (window.innerWidth <= this.generalConfig.limitWidth) {
-            menu.style =this.personalCssMenuMobile ?? this.css.menuMobile
+            menu.style = this.personalCssMenuMobile ?? this.css.menuMobile
             let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
             if (hasClosed == -1 && !this.hasRezised) {
                 applications.push({
