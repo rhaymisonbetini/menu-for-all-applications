@@ -2,10 +2,9 @@
 
 <p align="center">
    <img src="https://img.shields.io/bower/l/MI?style=flat-square">
-   <img src="https://img.shields.io/badge/version-1.0.2-blue">
+   <img src="https://img.shields.io/badge/version-1.2.4-blue">
    <img alt="npm" src="https://img.shields.io/npm/dm/menu-for-all-applications">
    <img alt="npm" src="https://img.shields.io/npm/dw/menu-for-all-applications">
-   <img src="https://img.shields.io/badge/coverage-100%25-yellowgree" alt="coverage">
    <img src="https://img.shields.io/github/issues/rhaymisonbetini/menu-for-all-applications.svg">
    <img src="https://img.shields.io/github/issues-closed/rhaymisonbetini/menu-for-all-applications.svg">
    <img src="https://img.shields.io/github/issues-pr/rhaymisonbetini/menu-for-all-applications.svg">
