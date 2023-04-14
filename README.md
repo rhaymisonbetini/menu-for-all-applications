@@ -1,8 +1,13 @@
 # MENU FOR ALL APPLICATIONS 
 
+This library aims to create a dropdown menu with redirection to multiple applications <br/> 
+that the user can access. Application provisioning, authentication and all data is provided by your api<br/> 
+Responsive is available for screen width less 800px
+
+
 <p align="center">
    <img src="https://img.shields.io/bower/l/MI?style=flat-square">
-   <img src="https://img.shields.io/badge/version-1.2.4-blue">
+   <img src="https://img.shields.io/badge/version-1.2.5-blue">
    <img alt="npm" src="https://img.shields.io/npm/dm/menu-for-all-applications">
    <img alt="npm" src="https://img.shields.io/npm/dw/menu-for-all-applications">
    <img src="https://img.shields.io/github/issues/rhaymisonbetini/menu-for-all-applications.svg">
@@ -25,10 +30,6 @@
   </a>
 </p>
 
-
-This library aims to create a dropdown menu with redirection to multiple applications <br/> 
-that the user can access. Application provisioning, authentication and all data is provided by your api<br/> 
-Responsive is available for screen width less 800px
 
 ![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu1.gif)
 
