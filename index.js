@@ -13,7 +13,7 @@ class MenuForAllApplications {
      * @param string applicationUrl 
      * @returns void
      */
-    constructor(token = null, userMail = null, applicationUrl = null) {
+    constructor(token = null, userMail = null, applicationUrl = null, config = {}) {
         this.token = token
         this.userMail = userMail
         this.applicationUrl = applicationUrl;
@@ -25,6 +25,22 @@ class MenuForAllApplications {
         this.screenWidth = window.innerWidth;
         this.screenHeight = window.innerHeight;
         this.hasRezised = false;
+        this.personalCss = null;
+        this.personalCssMenuMobile = null;
+        this.personalMouseHover =null;
+    }
+
+
+    async setMenuStyle(color, positionTop, aling, text) {
+        this.personalCss = this.internalConfig.setMenuNormalStyle(positionTop, color, aling)
+    }
+
+    async setMouseOnHover(color){
+        this.personalMouseHover = this.internalConfig.setMouseOnHover(color)
+    }
+
+    async setMobileMenu(color, positionTop){
+        this.personalCssMenuMobile = this.internalConfig.setMenuMobile(positionTop, color)
     }
 
     /**
@@ -32,23 +48,45 @@ class MenuForAllApplications {
      * @returns void
      */
     async initMenu() {
-        if (!this.token || !this.userMail || !this.applicationUrl) {
-            this.createMainMenu(false)
-            return;
-        }
+        // if (!this.token || !this.userMail || !this.applicationUrl) {
+        //     this.createMainMenu(false)
+        //     return;
+        // }
 
-        let menuAndConfig = await axios.post(this.applicationUrl, {
-            email: this.userMail
-        }, {
-            headers: {
-                'Authorization': `Bearer ${this.token}`
+        // let menuAndConfig = await axios.post(this.applicationUrl, {
+        //     email: this.userMail
+        // }, {
+        //     headers: {
+        //         'Authorization': `Bearer ${this.token}`
+        //     }
+        // }).catch((error) => {
+        //     console.log('========menuerrorcall==========')
+        //     console.log(error)
+        //     this.createMainMenu(false)
+        // })
+
+
+        let data = [
+            {
+                title: "Home",
+                link: "Url to destination application"
+            },
+            {
+                title: "Register",
+                link: "Url to destination application"
+            },
+            {
+                title: "Products",
+                link: "Url to destination application"
+            },
+            {
+                title: "Contact us",
+                link: "Url to destination application"
             }
-        }).catch((error) => {
-            console.log('========menuerrorcall==========')
-            console.log(error)
-            this.createMainMenu(false)
-        })
-        this.createMainMenu(menuAndConfig.data)
+        ]
+
+
+        this.createMainMenu(data)
     }
 
     /**
@@ -86,13 +124,13 @@ class MenuForAllApplications {
             var menu = document.createElement('div');
             menu.id = "masterMenu"
             if (this.screenWidth <= this.generalConfig.limitWidth) {
-                menu.style = this.css.menuMobile
+                menu.style = this.personalCssMenuMobile ?? this.css.menuMobile
                 applications.push({
                     title: 'Close Menu',
                     link: null
                 })
             } else {
-                menu.style = this.css.menuNormal
+                menu.style = this.personalCss ??this.css.menuNormal
             }
             document.getElementById("q-app").appendChild(menu);
             this.mount()
@@ -134,7 +172,7 @@ class MenuForAllApplications {
             return
         }
         if (window.innerWidth <= this.generalConfig.limitWidth) {
-            menu.style = this.css.menuMobile
+            menu.style =this.personalCssMenuMobile ?? this.css.menuMobile
             let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
             if (hasClosed == -1 && !this.hasRezised) {
                 applications.push({
@@ -149,7 +187,7 @@ class MenuForAllApplications {
             if (hasClosed && hasClosed !== -1 && this.hasRezised) {
                 applications.splice(hasClosed, 1)
                 var menu = document.getElementById('masterMenu');
-                menu.style = this.css.menuNormal
+                menu.style = this.personalCss ?? this.css.menuNormal
                 this.destroiById("closeMenu")
                 this.hasRezised = false
             }
@@ -169,7 +207,7 @@ class MenuForAllApplications {
         link.href = app.link
         body.appendChild(link);
         link.addEventListener("mouseover", (_) => {
-            link.style = this.css.mouseHoverLink
+            link.style = this.personalMouseHover ?? this.css.mouseHoverLink
         })
         link.addEventListener("mouseout", (_) => {
             link.style = this.css.mouseOutLink
