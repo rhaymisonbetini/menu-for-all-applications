@@ -31,6 +31,7 @@ class MenuForAllApplications {
     }
 
 
+    async setMenuStyle(color, positionTop, aling) {
         this.personalCss = this.internalConfig.setMenuNormalStyle(positionTop, color, aling)
     }
 
