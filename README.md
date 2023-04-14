@@ -8,7 +8,7 @@ Responsive is available for screen width less 800px
 <p align="center">
    <img src="https://img.shields.io/bower/l/MI?style=flat-square">
    <img src="https://img.shields.io/badge/version-1.3.5-blue">
-   <img src="https://img.shields.io/github/downloads/rhaymisonbetini/menu-for-all-applications/total.svg">
+   <img src="https://img.shields.io/npm/dy/menu-for-all-applications">
    <img alt="npm" src="https://img.shields.io/npm/dm/menu-for-all-applications">
    <img alt="npm" src="https://img.shields.io/npm/dw/menu-for-all-applications">
    <img src="https://img.shields.io/github/issues/rhaymisonbetini/menu-for-all-applications.svg">
