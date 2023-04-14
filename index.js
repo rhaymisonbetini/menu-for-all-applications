@@ -31,7 +31,6 @@ class MenuForAllApplications {
     }
 
 
-    async setMenuStyle(color, positionTop, aling, text) {
         this.personalCss = this.internalConfig.setMenuNormalStyle(positionTop, color, aling)
     }
 
@@ -48,45 +47,23 @@ class MenuForAllApplications {
      * @returns void
      */
     async initMenu() {
-        // if (!this.token || !this.userMail || !this.applicationUrl) {
-        //     this.createMainMenu(false)
-        //     return;
-        // }
+        if (!this.token || !this.userMail || !this.applicationUrl) {
+            this.createMainMenu(false)
+            return;
+        }
 
-        // let menuAndConfig = await axios.post(this.applicationUrl, {
-        //     email: this.userMail
-        // }, {
-        //     headers: {
-        //         'Authorization': `Bearer ${this.token}`
-        //     }
-        // }).catch((error) => {
-        //     console.log('========menuerrorcall==========')
-        //     console.log(error)
-        //     this.createMainMenu(false)
-        // })
-
-
-        let data = [
-            {
-                title: "Home",
-                link: "Url to destination application"
-            },
-            {
-                title: "Register",
-                link: "Url to destination application"
-            },
-            {
-                title: "Products",
-                link: "Url to destination application"
-            },
-            {
-                title: "Contact us",
-                link: "Url to destination application"
+        let menuAndConfig = await axios.post(this.applicationUrl, {
+            email: this.userMail
+        }, {
+            headers: {
+                'Authorization': `Bearer ${this.token}`
             }
-        ]
-
-
-        this.createMainMenu(data)
+        }).catch((error) => {
+            console.log('========menuerrorcall==========')
+            console.log(error)
+            this.createMainMenu(false)
+        })
+        this.createMainMenu(menuAndConfig.data)
     }
 
     /**
