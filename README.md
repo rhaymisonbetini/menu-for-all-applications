@@ -30,11 +30,11 @@ This library aims to create a dropdown menu with redirection to multiple applica
 that the user can access. Application provisioning, authentication and all data is provided by your api<br/> 
 Responsive is available for screen width less 800px
 
-![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/Screen-Recording-_23-02-2023-09-18-06_.gif)
+![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu1.gif)
 
 resposive<br>
 
-![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/responsive_.gif)
+![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu3.gif)
 
 ## Installation
 
@@ -112,6 +112,18 @@ In you HTML add <br/>
         initMenu(token, email, endpointApplication)
   </script>
 ```
+
+If you want to change the color of the menu, its position from the top and the centering of the text just call the methods
+```javascript
+      //color, position-top, justify-content
+      menuForAll.setMenuStyle('#38761d', 0, 'left')
+      //color for mouse-houver
+      menuForAll.setMouseOnHover('#fff')
+      //color and position for menu mobile
+      menuForAll.setMobileMenu('#38761d', 0)
+
+```
+![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu2.gif)
 
 
 ## ERROR

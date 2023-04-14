@@ -227,7 +227,7 @@ class MenuForAllApplications {
         paragraph.id = 'closeMenu'
         body.appendChild(paragraph);
         paragraph.addEventListener("mouseover", (_) => {
-            paragraph.style = this.css.mouseHoverLink
+            paragraph.style = this.personalMouseHover ?? this.css.mouseHoverLink
         })
         paragraph.addEventListener("mouseout", (_) => {
             paragraph.style = this.css.mouseOutLink
