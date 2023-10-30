@@ -25,16 +25,6 @@ Responsive is available for screen width less 800px
    <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D">
 </p>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/heleno-betini-2b3016175/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-  </a>
-  <a href="https://github.com/rhaymisonbetini" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-  </a>
-</p>
-
-
 ![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu1.gif)
 
 resposive<br>

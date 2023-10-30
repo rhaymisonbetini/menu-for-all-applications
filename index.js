@@ -28,6 +28,7 @@ class MenuForAllApplications {
         this.personalCss = null;
         this.personalCssMenuMobile = null;
         this.personalMouseHover = null;
+        this.applicationName =  config.applicationName
     }
 
     /**
@@ -76,7 +77,7 @@ class MenuForAllApplications {
      */
     async initMenu() {
         if (!this.token || !this.userMail || !this.applicationUrl) {
-            imgIcon.src = this.icons.error
+            this.createMainMenu(false)
             return;
         }
 
@@ -129,13 +130,13 @@ class MenuForAllApplications {
             var menu = document.createElement('div');
             menu.id = "masterMenu"
             if (this.screenWidth <= this.generalConfig.limitWidth) {
-                menu.style = this.personalCssMenuMobile ?? this.css.menuMobile
+                menu.style = this.personalCssMenuMobile ? this.personalCssMenuMobile : this.css.menuMobile
                 applications.push({
                     title: 'Close Menu',
                     link: null
                 })
             } else {
-                menu.style = this.personalCss ?? this.css.menuNormal
+                menu.style = this.personalCss ? this.personalCss : this.css.menuNormal
             }
             document.getElementById("q-app").appendChild(menu);
             this.mount()
@@ -152,10 +153,12 @@ class MenuForAllApplications {
     mount() {
         for (const app of applications) {
             let body = document.getElementById("masterMenu");
-            if (app.title !== 'Close Menu') {
-                this.createLink(body, app)
-            } else {
-                this.createParagraph(body, app)
+            if(app.title.toLowerCase() != this.applicationName.toLowerCase()){
+                if (app.title !== 'Close Menu') {
+                    this.createLink(body, app)
+                } else {
+                    this.createParagraph(body, app)
+                }
             }
         }
         this.show()
@@ -177,7 +180,7 @@ class MenuForAllApplications {
             return
         }
         if (window.innerWidth <= this.generalConfig.limitWidth) {
-            menu.style = this.personalCssMenuMobile ?? this.css.menuMobile
+            menu.style = this.personalCssMenuMobile ? this.personalCssMenuMobile : this.css.menuMobile
             let hasClosed = applications.findIndex(element => element.title === 'Close Menu');
             if (hasClosed == -1 && !this.hasRezised) {
                 applications.push({
@@ -192,7 +195,7 @@ class MenuForAllApplications {
             if (hasClosed && hasClosed !== -1 && this.hasRezised) {
                 applications.splice(hasClosed, 1)
                 var menu = document.getElementById('masterMenu');
-                menu.style = this.personalCss ?? this.css.menuNormal
+                menu.style = this.personalCss ? this.personalCss : this.css.menuNormal
                 this.destroiById("closeMenu")
                 this.hasRezised = false
             }
@@ -212,7 +215,7 @@ class MenuForAllApplications {
         link.href = app.link
         body.appendChild(link);
         link.addEventListener("mouseover", (_) => {
-            link.style = this.personalMouseHover ?? this.css.mouseHoverLink
+            link.style = this.personalMouseHover ? this.personalMouseHover : this.css.mouseHoverLink
         })
         link.addEventListener("mouseout", (_) => {
             link.style = this.css.mouseOutLink
@@ -232,7 +235,7 @@ class MenuForAllApplications {
         paragraph.id = 'closeMenu'
         body.appendChild(paragraph);
         paragraph.addEventListener("mouseover", (_) => {
-            paragraph.style = this.personalMouseHover ?? this.css.mouseHoverLink
+            paragraph.style = this.personalMouseHover ? this.personalMouseHover : this.css.mouseHoverLink
         })
         paragraph.addEventListener("mouseout", (_) => {
             paragraph.style = this.css.mouseOutLink
