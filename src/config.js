@@ -23,7 +23,7 @@ class Config {
             menuNormal: "position:fixed; top:50px; width:100%; height:100px;background: #06d1d1; z-index: 99999999999999; pointer; display:flex; justify-content:center;align-items:center; opacity:0display:flex; justify-content:center;align-items:center",
             menuMobile: "position:fixed; top:50px; width:100%; min-height:100vh; height:auto; padding-top:15px; background: #06d1d1; z-index: 99999999999999; pointer; display:flex; flex-direction:column;align-items:center; opacity:0display:flex;",
             linkMenuDefault: `font-size: 24px; padding: 10px;font-weight: bold; text-decoration: none; color: #fff`,
-            mouseHoverLink: `font-size: 24px; padding: 10px; color:#757575 !important`,
+            mouseHoverLink: `font-size: 24px; padding: 10px; color:#fff !important`,
             mouseOutLink: `font-size: 24px; padding: 10px;font-weight: bold; text-decoration: none; color: #fff`,
             iconSizes: "width:50px; height:50px;"
         }
