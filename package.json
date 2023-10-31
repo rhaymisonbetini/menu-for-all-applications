@@ -1,6 +1,6 @@
 {
-  "name": "menu-for-all-applications",
-  "version": "1.3.5",
+  "name": "@pdm_dt/menu-for-all-applications",
+  "version": "1.4.7",
   "description": "",
   "main": "index.js",
   "scripts": {

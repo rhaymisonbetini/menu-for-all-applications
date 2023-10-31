@@ -7,10 +7,7 @@ Responsive is available for screen width less 800px
 
 <p align="center">
    <img src="https://img.shields.io/bower/l/MI?style=flat-square">
-   <img src="https://img.shields.io/badge/version-1.3.5-blue">
-   <img src="https://img.shields.io/npm/dy/menu-for-all-applications">
-   <img alt="npm" src="https://img.shields.io/npm/dm/menu-for-all-applications">
-   <img alt="npm" src="https://img.shields.io/npm/dw/menu-for-all-applications">
+   <img src="https://img.shields.io/badge/version-1.4.7-blue">
    <img src="https://img.shields.io/github/issues/rhaymisonbetini/menu-for-all-applications.svg">
    <img src="https://img.shields.io/github/issues-closed/rhaymisonbetini/menu-for-all-applications.svg">
    <img src="https://img.shields.io/github/issues-pr/rhaymisonbetini/menu-for-all-applications.svg">
@@ -121,7 +118,7 @@ If you want to change the color of the menu, its position from the top and the c
 ![alt text](https://github.com/rhaymisonbetini/menu-for-all-applications/blob/main/src/assets/menu2.gif)
 
 
-## CDN file ou import script tag
+## CDN file or import script tag
 
 If you don't want to use npm to install the package and call it directly in your html.<br/>
 Download the js file to your preferred directory.The file is located in <br/>
